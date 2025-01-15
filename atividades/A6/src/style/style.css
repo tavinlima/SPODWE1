@@ -57,6 +57,8 @@ h1 {
 
 #mode{
     -webkit-appearance: none;
+    -moz-appearance: none;    /* For Firefox */
+    appearance: none;         /* Standard */
     background-color: #f1f1f1;
     width: 50px;
     height: 25px;
