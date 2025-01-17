@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,44 +10,65 @@
 </head>
 
 <body>
-    <header><legend>Formulário de Contato</legend></header>
+    <header>
+        <legend>Formulário de Contato</legend>
+    </header>
     <main>
         <form class="container">
-            <label for="nome">Nome e sobrenome</label>
-            <input id="nome" class="input_text">
-            <label for="email">Email</label>
-            <input id="email" class="input_text">
-            <label for="telefone">Telefone</label>
-            <input id="telefone" class="input_text">
-            <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" class="input_text"></textarea>
-    
-            <div class="form_radiobox form_div">
-                <label>Como prefere o nosso contato?</span>
-                <input type="radio" name="Contato" id="emailContato" value="emailContato" checked><label for="emailContato">Email</label>
-                <input type="radio" name="Contato" id="telefoneContato" value="telefoneContato"><label for="telefoneContato">Telefone</label>
-                <input type="radio" name="Contato" id="whatsappContato" value="whatsappContato"><label for="whatsappContato">Whatsapp</label>
+            <div class="div_inputs">
+                <label for="nome">Nome e sobrenome</label>
+                <input id="nome" class="input_text">
+            </div>
+
+            <div class="div_inputs">
+                <label for="email">Email</label>
+                <input id="email" class="input_text">
+
+            </div>
+
+            <div class="div_inputs">
+                <label for="telefone">Telefone</label>
+                <input id="telefone" class="input_text">
+            </div>
+
+            <div class="div_inputs">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" class="input_text"></textarea>
+            </div>
+
+            <div class="form_radiobox">
+                <span>Como prefere o nosso contato?</span>
+                <label for="emailContato">
+                    <input type="radio" name="Contato" id="emailContato" value="emailContato" checked> Email
+                </label>
+                <label for="telefoneContato">
+                    <input type="radio" name="Contato" id="telefoneContato" value="telefoneContato"> Telefone
+                </label>
+                <label for="whatsappContato"> 
+                    <input type="radio" name="Contato" id="whatsappContato" value="whatsappContato"> Whatsapp
+                </label>
             </div>
 
 
-            <div class="form_div"> 
+            <div class="form_div">
                 <label for="nome">Qual horário prefere ser atendido?</label>
                 <select name="select">
-                    <option value="valor1" selected >Manhã </option>
-                    <option value="valor2" >Tarde</option>
+                    <option value="valor1" selected>Manhã </option>
+                    <option value="valor2">Tarde</option>
                     <option value="valor3">Noite</option>
                 </select>
             </div>
-           
-            
+
+
             <div class="form_check">
-                <input id="nome" type="checkbox"><label for="nome">Gostaria de receber nossas novidades por email?</label>
-                
+                <input id="nome" type="checkbox"><label for="nome">Gostaria de receber nossas novidades por
+                    email?</label>
+
             </div>
-            
+
             <button class="form_btn">Enviar formulário</button>
-    
-             <table>
+
+            <table>
                 <tr>
                     <th>Dia</th>
                     <th>Horários</th>
@@ -71,10 +93,11 @@
                     <td>Sexta</td>
                     <td>8 - 20h</td>
                 </tr>
-            </table> 
+            </table>
         </form>
     </main>
-    
+
     <footer><span>Desenvolvido por Gustavo Lima</span></footer>
 </body>
+
 </html>
