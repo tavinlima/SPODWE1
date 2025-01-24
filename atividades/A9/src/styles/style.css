@@ -30,6 +30,12 @@ h1 {
     padding: 1rem;
     height: 90vh;
     border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.box__atividades a {
+    margin-bottom: 1rem;
 }
 
 .box__atividades-conteudo {
