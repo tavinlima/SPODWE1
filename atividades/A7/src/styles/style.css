@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,11 +7,11 @@
 }
 
 .container {
-    max-width: 90%; 
-    width: 100%; 
+    max-width: 90%;
+    width: 100%;
     margin: 0 auto;
     padding: 20px;
-}  
+}
 
 body {
     background-color: #ebeae6;
@@ -24,6 +25,10 @@ h1 {
     color: #E2E2E2;
     font-size: 1.5rem;
     font-weight: 500;
+}
+
+h2 {
+    margin-top: 1rem;
 }
 
 .box__atividades {
@@ -40,93 +45,51 @@ h1 {
     margin: 1rem 0;
 }
 
-form {
+.box_definicao {
     display: flex;
-    flex-direction: column;
-    align-items: center; 
-    border: solid 1px;
-    border-radius: 15px;
-    margin: 1rem auto !important;
-    width: 450px;
-    padding: 26px 24px;
-    background-color: #FAFAFA;
+    gap: 55px;
 }
 
-legend {
+.box_definicao-content {
+    flex: 2;
+}
+
+.box_definicao p {
+    text-align: justify;
+}
+
+.box_definicao figure {
+    flex: 1;
+    /* Área menor para a imagem */
     text-align: center;
-    color: #fff;
-    font-size: 2rem;
 }
 
-label {
-    
-    align-self: baseline;
-}
-
-.div_inputs {
-    display: flex;
-    flex-direction: column;
-    width: 65%;
-}
-
-.div_inputs label{
-    margin: 1em 0 0.5em 0;
-}
-
-.div_inputs input {
-    height: 1.5rem;
-    padding-left: 0.5rem;
-}
-
-#notaFiscal {
-    padding: 0px;
-}
-
-.form_radiobox {
-    display: flex;
-    flex-direction: column;
-    width: 35%;
-    gap: 10px;
-}
-
-.form_radiobox span {
-    margin-top: 2rem;
-}
-
-.form_radiobox label {
-    width: auto;
-    display: inline-block;
-}
-
-.form_div {
-    display: flex;
-    flex-direction: column;
-    width: 35%;
-}
-
-.form_div label {
-    margin: 2rem 0 1rem 0;
-}
-
-
-.form_btn {
-    /*padding: 1em 5em; */
-    background-color: #000340;
-    color: #fff;
-    border-radius: 5px;
+.box_definicao figcaption {
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    width: 10rem;
-    height: 2rem;
-    margin: 2rem auto;
-    border: none;
+    font-size: 0.9rem;
+    color: gray;
 }
 
-.form_btn:hover {
-    background-color: #050c86;
-    cursor: pointer;
+.box_definicao img {
+    max-width: 450px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.box_subconteudo h3 {
+    margin-top: 1rem;
+}
+
+.box_subconteudo li,  .box_definicao li{
+    margin-top: 0.5rem;
+}
+
+.box_referencias ul {
+    max-width: 98%;
+    text-align: justify
+}
+
+.box_referencias li {
+    margin: 1rem 0;
 }
