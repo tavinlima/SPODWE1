@@ -32,12 +32,20 @@ h1 {
     border-radius: 18px;
 }
 
+.box__atividades p {
+    margin: 1rem 0;
+}
+
 form {
     display: flex;
     flex-direction: column;
     align-items: center; 
     border: solid 1px;
+    border-radius: 15px;
     margin: 1rem auto !important;
+    width: 450px;
+    padding: 26px 24px;
+    background-color: #FAFAFA;
 }
 
 legend {
@@ -54,11 +62,20 @@ label {
 .div_inputs {
     display: flex;
     flex-direction: column;
-    width: 35%;
+    width: 65%;
 }
 
 .div_inputs label{
     margin: 1em 0 0.5em 0;
+}
+
+.div_inputs input {
+    height: 1.5rem;
+    padding-left: 0.5rem;
+}
+
+#notaFiscal {
+    padding: 0px;
 }
 
 .form_radiobox {
@@ -87,15 +104,6 @@ label {
     margin: 2rem 0 1rem 0;
 }
 
-.form_check {
-    display: flex;
-    margin-top: 1rem;
-    gap: 5px;
-}
-
-.form_check label {
-    margin: 0;
-}
 
 .form_btn {
     /*padding: 1em 5em; */
@@ -117,19 +125,4 @@ label {
 .form_btn:hover {
     background-color: #050c86;
     cursor: pointer;
-}
-
-th, td {
-    padding: 15px;
-    text-align: center;
-    border: solid 1px;
-  }
-
-footer  {
-    background-color: #0F0F0F;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 5rem;
 }

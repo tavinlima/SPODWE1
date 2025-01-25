@@ -9,6 +9,12 @@
 </head>
 <script>
 
+    function validarTeclaNumerica(e) {
+        const tecla = e.key;
+        // Permite apenas números de 0-9
+        return /\d/.test(tecla);
+    }
+
     document.addEventListener('input', function (event) {
         const input = event.target;
         const masktype = input.dataset.mask;
@@ -82,31 +88,36 @@
     <main class="box__atividades container">
         <h2>Atividades para aula de Desenvolvimento Web I</h2>
         <p>O formulário a seguir simula o envio de informações de cadastro de Nota Fiscal</p>
-        <form class="container">
+        <form>
             <div class="div_inputs">
                 <label for="cpf">CPF do comprador</label>
-                <input id="cpf" class="input_text" data-mask="cpf" maxlength="11">
+                <input type="text" id="cpf" class="input_text" data-mask="cpf" maxlength="11"
+                    onkeypress="return validarTeclaNumerica(event)">
             </div>
 
 
             <div class="div_inputs">
                 <label for="telefone">Telefone do comprador</label>
-                <input id="telefone" class="input_text" type="tel" data-mask="telefone">
+                <input id="telefone" class="input_text" type="tel" data-mask="telefone"
+                    onkeypress="return validarTeclaNumerica(event)">
             </div>
 
             <div class="div_inputs">
                 <label for="data">Data da compra</label>
-                <input id="data" class="input_text" data-mask="data"></input>
+                <input id="data" class="input_text" data-mask="data"
+                    onkeypress="return validarTeclaNumerica(event)"></input>
             </div>
 
             <div class="div_inputs">
                 <label for="hora">Hora da compra</label>
-                <input id="hora" class="input_text" data-mask="hora"></input>
+                <input id="hora" class="input_text" data-mask="hora"
+                    onkeypress="return validarTeclaNumerica(event)"></input>
             </div>
 
             <div class="div_inputs">
                 <label for="moeda">Valor da compra</label>
-                <input id="moeda" class="input_text" data-mask="moeda"></input>
+                <input id="moeda" class="input_text" data-mask="moeda"
+                    onkeypress="return validarTeclaNumerica(event)"></input>
             </div>
 
             <div class="div_inputs">
