@@ -3,101 +3,94 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 11 - Consumo de API</title>
     <link rel="stylesheet" href="./src/styles/style.css" />
-    <title>Atividade 11 - Construção de um formulário</title>
 </head>
+<script>
+
+    // URL da API do GitHub para obter dados do usuário autenticado
+    const url = 'https://api.github.com/users/tavinlima';
+
+    // Configurações da requisição
+    const options = {
+        method: 'GET'
+    };
+
+    // Fazendo a requisição para a API do GitHub
+    fetch(url, options)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            // Exibindo os dados do usuário no HTML
+            const userDataDiv = document.getElementById('user-data');
+            userDataDiv.innerHTML = `
+                    <p><strong>Nome:</strong> ${data.name}</p>
+                    <p><strong>Username:</strong> ${data.login}</p>
+                    <p><strong>Bio:</strong> ${data.bio}</p>
+                    <p><strong>Quantidade de repositórios Públicos:</strong> ${data.public_repos}</p>
+                    <div class='box__github_follow'> <p><strong>Seguidores:</strong> ${data.followers}</p>
+                    <p><strong>Seguindo:</strong> ${data.following}</p> </div>
+                `;
+        })
+        .catch(error => console.error('Erro:', error));
+
+    function carregarRepositorios() {
+
+        // URL da API do GitHub para obter os repositórios do usuário autenticado
+        const url = 'https://api.github.com/users/tavinlima/repos';
+
+        // Configurações da requisição
+        const options = {
+            method: 'GET'
+        };
+
+        // Fazendo a requisição para a API do GitHub
+        fetch(url, options)
+            .then(response => response.json())
+            .then(data => {
+                // Exibindo os repositórios no HTML
+                const reposDiv = document.getElementById('repos');
+                data.forEach(repo => {
+                    const repoElement = document.createElement('div');
+                    repoElement.classList.add('card');
+                    repoElement.innerHTML = `
+                        <p><strong>Nome:</strong> ${repo.name}</p>
+                        <p><strong>Descrição:</strong> ${repo.description}</p>
+                        <p><strong>URL:</strong> <a href="${repo.html_url}" target="_blank">${repo.html_url}</a></p>
+                    `;
+                    reposDiv.appendChild(repoElement);
+                });
+            })
+            .catch(error => console.error('Erro:', error));
+    }
+
+    carregarRepositorios()
+</script>
+
 
 <body>
     <header>
-        <legend>Formulário de Contato</legend>
+        <h1 class="container">Atividade 11 - Consumo de API</h1>
     </header>
-    <main>
-        <form class="container">
-            <div class="div_inputs">
-                <label for="nome">Nome e sobrenome</label>
-                <input id="nome" class="input_text">
-            </div>
 
-            <div class="div_inputs">
-                <label for="email">Email</label>
-                <input id="email" class="input_text">
+    <main class="box__atividades container">
+        <a href="../../index.html">Voltar para página inicial</a>
+        <h2>Consumindo uma API</h2>
+        <p>Consumindo a API do github para acesso aos dados do meu usuário</p>
+        <div class="box__atividades-conteudo">
+            <section class="box__atividades_section">
+                <img src="https://avatars.githubusercontent.com/u/82414372?v=4">
+                <div id="user-data"></div>
+            </section>
 
-            </div>
+            <section>
+                <h3>Meus repositórios: </h3>
+                <div id="repos"></div>
+            </section>
 
-            <div class="div_inputs">
-                <label for="telefone">Telefone</label>
-                <input id="telefone" class="input_text">
-            </div>
-
-            <div class="div_inputs">
-                <label for="mensagem">Mensagem</label>
-                <textarea id="mensagem" class="input_text"></textarea>
-            </div>
-
-            <div class="form_radiobox">
-                <span>Como prefere o nosso contato?</span>
-                <label for="emailContato">
-                    <input type="radio" name="Contato" id="emailContato" value="emailContato" checked> Email
-                </label>
-                <label for="telefoneContato">
-                    <input type="radio" name="Contato" id="telefoneContato" value="telefoneContato"> Telefone
-                </label>
-                <label for="whatsappContato"> 
-                    <input type="radio" name="Contato" id="whatsappContato" value="whatsappContato"> Whatsapp
-                </label>
-            </div>
-
-
-            <div class="form_div">
-                <label for="nome">Qual horário prefere ser atendido?</label>
-                <select name="select">
-                    <option value="valor1" selected>Manhã </option>
-                    <option value="valor2">Tarde</option>
-                    <option value="valor3">Noite</option>
-                </select>
-            </div>
-
-
-            <div class="form_check">
-                <input id="nome" type="checkbox"><label for="nome">Gostaria de receber nossas novidades por
-                    email?</label>
-
-            </div>
-
-            <button class="form_btn">Enviar formulário</button>
-
-            <table>
-                <tr>
-                    <th>Dia</th>
-                    <th>Horários</th>
-                </tr>
-                <tr>
-                    <td>Segunda</td>
-                    <td>8 - 20h</td>
-                </tr>
-                <tr>
-                    <td>Terça</td>
-                    <td>8 - 20h</td>
-                </tr>
-                <tr>
-                    <td>Quarta</td>
-                    <td>8 - 20h</td>
-                </tr>
-                <tr>
-                    <td>Quinta</td>
-                    <td>8 - 20h</td>
-                </tr>
-                <tr>
-                    <td>Sexta</td>
-                    <td>8 - 20h</td>
-                </tr>
-            </table>
-        </form>
+        </div>
     </main>
-
-    <footer><span>Desenvolvido por Gustavo Lima</span></footer>
 </body>
 
 </html>
