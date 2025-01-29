@@ -1,5 +1,5 @@
 body{
-    background-color: #000;
+    background-color: #fafafa;
     color: white;
     font-family: poppinsregular;
     max-width: 1200px;
@@ -42,7 +42,7 @@ a:hover{
 
 #inscreva-se-btn:hover{
     background-color: #1570BF;
-    color: white;
+    color: #000;
 }
 
 h1{
@@ -73,12 +73,22 @@ h2{
 .section__titles-subtitle {
     line-height: unset;
     margin: unset;
+    color: #000;
 }
 
 p{
     line-height: 20px;
     max-width: 500px;
     font-family: poppinslight;
+    color: #000;
+}
+
+li {
+    color: #000;
+}
+
+h1 {
+    color: #000;
 }
 
 img{
