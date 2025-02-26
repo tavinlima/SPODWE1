@@ -53,14 +53,18 @@
                 // Exibindo os repositórios no HTML
                 const reposDiv = document.getElementById('repos');
                 data.forEach(repo => {
-                    const repoElement = document.createElement('div');
-                    repoElement.classList.add('card');
-                    repoElement.innerHTML = `
-                        <p><strong>Nome:</strong> ${repo.name}</p>
-                        <p><strong>Descrição:</strong> ${repo.description}</p>
+                    if (repo.description !== null) {
+                        const repoElement = document.createElement('div');
+                        repoElement.classList.add('card');
+                        repoElement.innerHTML = `
+                        <strong>Nome:</strong>
+                        <p> ${repo.name}</p>
+                        <strong>Descrição:</strong>
+                        <p class="box__repos_desc"> ${repo.description}</p>
                         <p><strong>URL:</strong> <a href="${repo.html_url}" target="_blank">${repo.html_url}</a></p>
                     `;
-                    reposDiv.appendChild(repoElement);
+                        reposDiv.appendChild(repoElement);
+                    }
                 });
             })
             .catch(error => console.error('Erro:', error));
@@ -76,7 +80,6 @@
     </header>
 
     <main class="box__atividades container">
-        <a href="../../index.html">Voltar para página inicial</a>
         <h2>Consumindo uma API</h2>
         <p>Consumindo a API do github para acesso aos dados do meu usuário</p>
         <div class="box__atividades-conteudo">

@@ -100,7 +100,15 @@ h2, h3 {
     margin: 10px 0;
 }
 
-.card a {
+/* .box__repos_desc {
+    width: 200px; 
+    display: -webkit-box;
+    -webkit-line-clamp: 2; //número máximo de linhas
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+} */
+
+.card a{
     color: #007bff;
     text-decoration: none;
     display: block;
