@@ -57,8 +57,10 @@
                         const repoElement = document.createElement('div');
                         repoElement.classList.add('card');
                         repoElement.innerHTML = `
-                        <p><strong>Nome:</strong> ${repo.name}</p>
-                        <p><strong>Descrição:</strong> ${repo.description}</p>
+                        <strong>Nome:</strong>
+                        <p> ${repo.name}</p>
+                        <strong>Descrição:</strong>
+                        <p class="box__repos_desc"> ${repo.description}</p>
                         <p><strong>URL:</strong> <a href="${repo.html_url}" target="_blank">${repo.html_url}</a></p>
                     `;
                         reposDiv.appendChild(repoElement);
