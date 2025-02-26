@@ -53,14 +53,16 @@
                 // Exibindo os repositórios no HTML
                 const reposDiv = document.getElementById('repos');
                 data.forEach(repo => {
-                    const repoElement = document.createElement('div');
-                    repoElement.classList.add('card');
-                    repoElement.innerHTML = `
+                    if (repo.description !== null) {
+                        const repoElement = document.createElement('div');
+                        repoElement.classList.add('card');
+                        repoElement.innerHTML = `
                         <p><strong>Nome:</strong> ${repo.name}</p>
                         <p><strong>Descrição:</strong> ${repo.description}</p>
                         <p><strong>URL:</strong> <a href="${repo.html_url}" target="_blank">${repo.html_url}</a></p>
                     `;
-                    reposDiv.appendChild(repoElement);
+                        reposDiv.appendChild(repoElement);
+                    }
                 });
             })
             .catch(error => console.error('Erro:', error));
